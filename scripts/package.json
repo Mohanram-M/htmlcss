@@ -1,0 +1,10 @@
+{
+    "name": "HTML_CSS_BUILDER",
+    "description": "watches the folders and automatically loads them",
+    "authors": "0mohan0ram",
+    "version": "1.0.0",
+    "scripts": {
+        "start:sasscompile":"sass ${SCSS_CSS_MAPPING//,/ } --watch",
+        "start":"(npm run start:sasscompile) && npm run start:liveserver"
+    }
+}
