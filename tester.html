@@ -1,0 +1,79 @@
+<!-- BASIC FLIP CARD TEST-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Card</title>
+    <style>
+        *,*::after,*::before{
+            margin:0;
+            box-sizing: inherit;
+            padding:0;
+        }
+
+        body{
+            box-sizing: border-box;
+            margin:5px;
+        }
+
+        .flipcard{
+            display:block;
+            position:relative;
+            perspective: 100rem;
+            width:30rem;
+            height:20rem;
+            
+        }
+
+        .flipcard__front{
+            position :absolute;
+            top:0;
+            bottom:0;
+            backface-visibility: hidden;
+           
+            background-image: linear-gradient(to right bottom,orangered,red);
+            width:30rem;
+            height:20rem;
+            transition:transform 1s linear;
+            box-shadow: 0 .5rem .8rem rgba(0,0,0,0.8);
+        }
+
+        .flipcard__back{
+            position :absolute;
+            top:0;
+            bottom:0;
+            backface-visibility: hidden;
+            background-blend-mode: soft-light;
+            background-image:linear-gradient(to right bottom,skyblue,blue),url(./natours/img/hero-small.jpg);
+            background-size: cover;          
+            transform:rotateY(-180deg);
+            width:30rem;
+            height:20rem;
+            transition:transform 1s linear;
+            box-shadow: 0 .5rem .8rem rgba(0,0,0,0.8);
+        }
+
+        .flipcard:hover .flipcard__front{
+            transform:rotateY(180deg);
+        }   
+
+        .flipcard:hover .flipcard__back{
+            transform:rotateY(+0deg);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="flipcard">
+        <div class="flipcard__front">
+            abcdef
+        </div>
+        <div class="flipcard__back">
+            ghijkl
+        </div>
+    </div>
+</body>
+</html>

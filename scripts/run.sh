@@ -7,8 +7,6 @@
 SCRIPT_PATH="$(readlink --canonicalize-existing "$0")"
 SCRIPT_DIR="$(dirname "$SCRIPT_PATH")"
 
-echo $SCRIPT_PATH
-echo $SCRIPT_DIR
 if [ -z $1 ] || [ -z $2 ] || [ -z $3 ];
 then
     echo "Invalid command , expected rootfolder scssfolder cssfolder"
